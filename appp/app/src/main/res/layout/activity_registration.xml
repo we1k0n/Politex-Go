@@ -12,12 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="OnClick"
-        android:text="Регістрація"
+        android:text="Реєстрація"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/etPassword2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/etKey"
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -46,13 +46,13 @@
         app:layout_constraintTop_toBottomOf="@+id/etLogin2" />
 
     <EditText
-        android:id="@+id/etKey"
+        android:id="@+id/etConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Введіть ключ"
-        android:inputType="number"
+        android:hint="Підтвердіть пароль"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etPassword2"
         app:layout_constraintStart_toStartOf="@+id/etPassword2"
         app:layout_constraintTop_toBottomOf="@+id/etPassword2" />
