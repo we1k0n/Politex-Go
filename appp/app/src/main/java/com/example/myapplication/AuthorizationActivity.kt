@@ -16,7 +16,9 @@ class AuthorizationActivity : AppCompatActivity() {
     fun onClick(view: View){
         if(getString(R.string.password)==bindingClass.etPassword.text.toString() &&
             getString(R.string.login)==bindingClass.etLogin.text.toString()){
-
+            val intent = Intent(this,Menu::class.java)
+            startActivity(intent)
+            finish()
         }
         else{
             val intent = Intent(this,RegistrationActivity::class.java)
