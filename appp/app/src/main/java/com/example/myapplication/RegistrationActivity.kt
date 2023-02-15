@@ -29,4 +29,9 @@ class RegistrationActivity : AppCompatActivity() {
             finish()
         }
     }
+    fun onClickToAuthorization(view: View){
+        val intent = Intent(this,AuthorizationActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }

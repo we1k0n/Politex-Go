@@ -29,9 +29,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <EditText
         android:id="@+id/etPassword2"
@@ -56,5 +57,24 @@
         app:layout_constraintEnd_toEndOf="@+id/etPassword2"
         app:layout_constraintStart_toStartOf="@+id/etPassword2"
         app:layout_constraintTop_toBottomOf="@+id/etPassword2" />
+
+    <Button
+        android:id="@+id/buttonToAuthorization"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="148dp"
+        android:insetLeft="10dp"
+        android:insetTop="10dp"
+        android:insetRight="10dp"
+        android:insetBottom="10dp"
+        android:onClick="onClickToAuthorization"
+        android:text="Реєстрація"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonReg"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonReg"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReg"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
