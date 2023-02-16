@@ -69,7 +69,7 @@
         android:insetRight="10dp"
         android:insetBottom="10dp"
         android:onClick="onClickToAuthorization"
-        android:text="Реєстрація"
+        android:text="Авторизація"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/buttonReg"
         app:layout_constraintHorizontal_bias="1.0"
