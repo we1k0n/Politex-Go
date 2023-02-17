@@ -22,14 +22,14 @@ class AuthorizationActivity : AppCompatActivity() {
          val login = bindingClass.etLogin.text.toString()
          db.getDao().Authorization(login).asLiveData().observe(this) {
              if (bindingClass.etPassword.text.toString() == it) {
-                 val intent = Intent(this, Menu::class.java)
+                 var intent = Intent(this, Menu::class.java)
                  startActivity(intent)
                  finish()
              }
          }
      }
     fun onClickToRegistration(view: View){
-        val intent = Intent(this,RegistrationActivity::class.java)
+        var intent = Intent(this,RegistrationActivity::class.java)
             startActivity(intent)
             finish()
     }

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-@Database(entities = [Librarian::class], version = 1)
+@Database(entities = [Librarian::class,Book::class], version = 1)
 abstract class DB :RoomDatabase(){
     abstract fun getDao():Dao
 

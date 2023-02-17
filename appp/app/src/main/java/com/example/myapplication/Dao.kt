@@ -1,4 +1,5 @@
 package com.example.myapplication
+
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -8,6 +9,10 @@ import kotlinx.coroutines.flow.Flow
 interface Dao {
     @Insert
     fun insertLibrarian(librarian: Librarian)
+
+    @Insert
+    fun insertBook(book: Book)
+
     @Query("SELECT password FROM librarians where login=:login")
-    fun Authorization(login :String): Flow<String>
+    fun Authorization(login: String): Flow<String>
 }
