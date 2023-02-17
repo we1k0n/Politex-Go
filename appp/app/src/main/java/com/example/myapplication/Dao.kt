@@ -13,6 +13,12 @@ interface Dao {
     @Insert
     fun insertBook(book: Book)
 
+    @Insert
+    fun insertReader(reader: Reader)
+
     @Query("SELECT password FROM librarians where login=:login")
     fun Authorization(login: String): Flow<String>
+
+    @Query("SELECT * FROM book where name LIKE :name;")
+    fun findBook(name: String): Flow<Book>
 }

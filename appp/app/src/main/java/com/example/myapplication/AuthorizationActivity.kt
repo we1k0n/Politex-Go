@@ -18,27 +18,29 @@ class AuthorizationActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
         db = DB.getDB(this)
     }
-     fun onClick(view: View) {
-         val login = bindingClass.etLogin.text.toString()
-         db.getDao().Authorization(login).asLiveData().observe(this) {
-             if (bindingClass.etPassword.text.toString() == it) {
-                 var intent = Intent(this, Menu::class.java)
-                 startActivity(intent)
-                 finish()
-             }
-         }
-     }
-    fun onClickToRegistration(view: View){
-        var intent = Intent(this,RegistrationActivity::class.java)
-            startActivity(intent)
-            finish()
-    }
-         //AsyncTask.execute { // Insert Data
-          //  runOnUiThread {
-                //bindingClass.textView.text = id
-          //  }
 
-       // }
+    fun onClick(view: View) {
+        val login = bindingClass.etLogin.text.toString()
+        db.getDao().Authorization(login).asLiveData().observe(this) {
+            if (bindingClass.etPassword.text.toString() == it) {
+                var intent = Intent(this, Menu::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+    }
+
+    fun onClickToRegistration(view: View) {
+        var intent = Intent(this, RegistrationActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+    //AsyncTask.execute { // Insert Data
+    //  runOnUiThread {
+    //bindingClass.textView.text = id
+    //  }
+
+    // }
 
 //        var id :Int?=10
 ////        Thread{
