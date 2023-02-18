@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.BookItemBinding
 
 class BookAdapter: RecyclerView.Adapter<BookAdapter.BookHolder>() {
-    val bookList = ArrayList<Book>()
+    val bookList = ArrayList<BookList>()
     class BookHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = BookItemBinding.bind(item)
-        fun bind(book: Book) = with(binding){
+        fun bind(book: BookList) = with(binding){
             im.setImageResource(book.imageId)
             tvTitle.text = book.title
         }
@@ -29,7 +29,7 @@ class BookAdapter: RecyclerView.Adapter<BookAdapter.BookHolder>() {
         holder.bind(bookList[position])
     }
 
-    fun addBook(book: Book){
+    fun addBook(book: BookList){
         bookList.add(book)
         notifyDataSetChanged()
     }

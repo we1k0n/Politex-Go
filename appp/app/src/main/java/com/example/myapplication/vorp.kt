@@ -27,7 +27,7 @@ class vorp : AppCompatActivity() {
             rcView.adapter = adapter
             BaddIM.setOnClickListener {
                 if(index > 1) index = 0
-                val book = Book(imageIdList[index], "Image $index")
+                val book = BookList(imageIdList[index], "Image $index")
                 adapter.addBook(book)
                 index++
             }
