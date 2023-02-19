@@ -1,3 +1,10 @@
-package com.example.myapplication
-
-data class BookList(val imageId: Int, val title: String)
+//package com.example.myapplication
+//
+//import androidx.room.Entity
+//import androidx.room.PrimaryKey
+//@Entity
+//data class BookList(
+//    var name: String = "",
+//    ){
+//    @PrimaryKey(autoGenerate = true) var id: Int = 0
+//}

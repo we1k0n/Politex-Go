@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -28,20 +29,14 @@
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:text="texxxx"
+                android:text="text"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/im"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/image1" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

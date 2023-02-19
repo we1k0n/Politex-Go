@@ -3,34 +3,41 @@ package com.example.myapplication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.BookItemBinding
 
-class BookAdapter: RecyclerView.Adapter<BookAdapter.BookHolder>() {
-    val bookList = ArrayList<BookList>()
-    class BookHolder(item: View): RecyclerView.ViewHolder(item) {
-        val binding = BookItemBinding.bind(item)
-        fun bind(book: BookList) = with(binding){
-            im.setImageResource(book.imageId)
-            tvTitle.text = book.title
+class BookAdapter: RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
+    private var list = mutableListOf<Book>()
+    class BookViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        val tvName: TextView = itemView.findViewById(R.id.tvTitle)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.book_item,parent , false)
+        return BookViewHolder(view)
+    }
+
+    override fun getItemCount() = list.size
+
+    fun setData(data: List<Book>) {
+        list.apply {
+            clear()
+            addAll(data)
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.book_item, parent, false)
-        return BookHolder(view)
-    }
-
-    override fun getItemCount(): Int {
-        return bookList.size
-    }
-
-    override fun onBindViewHolder(holder: BookHolder, position: Int) {
-        holder.bind(bookList[position])
-    }
-
-    fun addBook(book: BookList){
-        bookList.add(book)
-        notifyDataSetChanged()
+    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
+        val book = list[position]
+        holder.tvName.text = book.name
     }
 }
+
+//    fun removeItem(pos: Int, calManager: CalManager){
+//        // удаляем элемент из списка
+//
+//        calManager.deleteMeeting(listItems[pos].uri) // удаляем встречу из календаря
+//        listItems.removeAt(pos) // удаляем элемент из списка с позиции pos
+//        notifyItemRangeChanged(0,listItems.size) // указываем адаптеру новый диапазон элементов
+//        notifyItemRemoved(pos) // указываем адаптеру, что один элемент удалился
+//    }
