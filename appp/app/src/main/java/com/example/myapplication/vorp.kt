@@ -15,7 +15,6 @@ import kotlinx.coroutines.launch
 
 class vorp : AppCompatActivity() {
     private lateinit var binding: ActivityVorpBinding
-    private val adapter = BookAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,6 @@ class vorp : AppCompatActivity() {
                 }
             }
         }
-
     }
 //    private fun initSearchView(){
 //        (activity as MainActivity).el.searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
