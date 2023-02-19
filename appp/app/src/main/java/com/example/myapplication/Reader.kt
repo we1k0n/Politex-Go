@@ -15,6 +15,8 @@ data class Reader(
      @ColumnInfo(name="address")
     var address: String,
      @ColumnInfo(name="phoneNum")
-    var phoneNum: Int
+    var phoneNum: Int,
+    @ColumnInfo(name="librarianId")
+    var librarianId: Int
 
 )

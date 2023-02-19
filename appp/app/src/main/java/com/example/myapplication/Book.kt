@@ -21,7 +21,7 @@ data class Book (
     @ColumnInfo(name="shelf")
     var shelf: String,
     @ColumnInfo(name="librarianId")
-    var librarianId: String
+    var librarianId: Int
 
 
 )
