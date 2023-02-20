@@ -19,7 +19,7 @@ interface Dao {
     fun Authorization(login: String): Flow<String>
 
     @Query("SELECT * FROM book where name LIKE '%' || :name || '%';")
-    fun findBook(name: String): Flow<Book>
+    fun findBook(name: String): Flow<List<Book>>
 
     @Query("SELECT * FROM book ORDER BY id DESC")
     suspend fun getAllBook(): List<Book>

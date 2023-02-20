@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,22 +16,33 @@ import kotlinx.coroutines.launch
 
 class vorp : AppCompatActivity() {
     private lateinit var binding: ActivityVorpBinding
-
+    lateinit var db: DB
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityVorpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        db = DB.getDB(this)
     }
 
-    override fun onResume() {
-        super.onResume()
-        lifecycleScope.launch {
-            val bookList = DB(this@vorp).getDao().getAllBook()
+//    override fun onResume() {
+//        super.onResume()
+//        lifecycleScope.launch {
+//            val bookList = DB(this@vorp).getDao().getAllBook()
+//            binding.rcView.apply {
+//                layoutManager = LinearLayoutManager(this@vorp)
+//                adapter = BookAdapter().apply {
+//                    setData(bookList)
+//                }
+//            }
+//        }
+//    }
+    fun onClick(view: View)
+    {
+        db.getDao().findBook(binding.editTextTextPersonName.text.toString()).asLiveData().observe(this){
             binding.rcView.apply {
                 layoutManager = LinearLayoutManager(this@vorp)
                 adapter = BookAdapter().apply {
-                    setData(bookList)
+                    setData(it)
                 }
             }
         }

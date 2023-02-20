@@ -27,6 +27,6 @@ class Menu : AppCompatActivity() {
     fun vorp(view: View){
         val intent = Intent(this,vorp::class.java)
         startActivity(intent)
-        finish()
+        //finish()
     }
 }
