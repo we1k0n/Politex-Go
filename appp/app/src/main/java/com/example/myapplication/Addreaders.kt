@@ -22,7 +22,7 @@ class Addreaders : AppCompatActivity() {
             null, bindingClass.firstName.text.toString(),
             bindingClass.lastName.text.toString(),
             bindingClass.adressa.text.toString(),
-            bindingClass.phone.text.toString().toInt(),0
+            bindingClass.phone.text.toString().toInt(),intent.getIntExtra("librarianId",0)
         )
         ATask(db = db,3) { resalt ->
             if (resalt) {

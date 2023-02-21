@@ -25,7 +25,7 @@ class Addbooks : AppCompatActivity() {
             bindingClass.year.text.toString(),
             bindingClass.ryad.text.toString(),
             bindingClass.stelaz.text.toString(),
-            bindingClass.polycia.text.toString(),0
+            bindingClass.polycia.text.toString(),intent.getIntExtra("librarianId",0)
         )
         ATask(db = db,2) { resalt ->
             if (resalt) {

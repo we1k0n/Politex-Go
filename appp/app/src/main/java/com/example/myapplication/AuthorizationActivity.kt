@@ -21,9 +21,11 @@ class AuthorizationActivity : AppCompatActivity() {
 
     fun onClick(view: View) {
         val login = bindingClass.etLogin.text.toString()
-        db.getDao().Authorization(login).asLiveData().observe(this) {
-            if (bindingClass.etPassword.text.toString() == it) {
+        val password = bindingClass.etPassword.text.toString()
+        db.getDao().Authorization(login,password).asLiveData().observe(this) {
+            if (it !=null) {
                 var intent = Intent(this, Menu::class.java)
+                intent.putExtra("librarianId",it)
                 startActivity(intent)
                 finish()
             }

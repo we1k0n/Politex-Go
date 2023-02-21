@@ -9,24 +9,29 @@ import com.example.myapplication.databinding.ActivityMenuBinding
 
 class Menu : AppCompatActivity() {
     lateinit var bindingClass : ActivityMenuBinding
+    var librarianId = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+        librarianId=intent.getIntExtra("librarianId",0)
     }
     fun AddBook (view: View) {
         val intent = Intent(this,Addbooks::class.java)
+        intent.putExtra("librarianId",librarianId)
         startActivity(intent)
-        finish()
+//        finish()
     }
     fun AddReaders(view: View){
         val intent = Intent(this,Addreaders::class.java)
         startActivity(intent)
-        finish()
+        intent.putExtra("librarianId",librarianId)
+//        finish()
     }
     fun vorp(view: View){
         val intent = Intent(this,vorp::class.java)
         startActivity(intent)
+        intent.putExtra("librarianId",librarianId)
         //finish()
     }
 }
