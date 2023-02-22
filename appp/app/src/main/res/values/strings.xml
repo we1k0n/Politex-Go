@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Бібліотека</string>
     <string name="password">password</string>
     <string name="login">login</string>
 </resources>
