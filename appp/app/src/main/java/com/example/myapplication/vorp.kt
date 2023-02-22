@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
@@ -22,6 +23,7 @@ class vorp : AppCompatActivity() {
         binding = ActivityVorpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         db = DB.getDB(this)
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
     }
 
 //    override fun onResume() {
