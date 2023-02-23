@@ -18,27 +18,32 @@ class RegistrationActivity : AppCompatActivity() {
     }
 
     fun OnClick(view: View) {
-        if (bindingClass.etPassword2.text.toString().length >= 8 &&
-            bindingClass.etPassword2.text.toString() == bindingClass.etConfirmPassword.text.toString()
-        ) {
-            val librarian = Librarian(
-                null, bindingClass.etLogin2.text.toString(),
-                bindingClass.etPassword2.text.toString()
-            )
-            ATask(db = db,1) { resalt ->
-                if (resalt) {
-                    val intent = Intent(this, AuthorizationActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    runOnUiThread{
-                        Toast.makeText(this,"ERROR",Toast.LENGTH_SHORT).show()
+        if (bindingClass.etPassword2.text.toString().length >= 8) {
+            if (bindingClass.etPassword2.text.toString() == bindingClass.etConfirmPassword.text.toString()
+            ) {
+                val librarian = Librarian(
+                    null, bindingClass.etLogin2.text.toString(),
+                    bindingClass.etPassword2.text.toString()
+                )
+                ATask(db = db, 1) { resalt ->
+                    if (resalt) {
+                        val intent = Intent(this, AuthorizationActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        runOnUiThread {
+                            Toast.makeText(this, "Даний логін вже існує", Toast.LENGTH_SHORT).show()
+                        }
+
                     }
-
-                }
-            }.execute(librarian)
-
-
+                }.execute(librarian)
+            }
+            else{
+                Toast.makeText(this,"Паролі не сходяться",Toast.LENGTH_SHORT).show()
+            }
+        }
+        else{
+            Toast.makeText(this,"Пароль має бути не менше 8 символів",Toast.LENGTH_SHORT).show()
         }
     }
 
