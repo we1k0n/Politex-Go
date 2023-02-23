@@ -23,7 +23,7 @@ abstract class DB :RoomDatabase(){
         fun getDB(context: Context): DB{
             return Room.databaseBuilder(context.applicationContext
                 ,DB::class.java,
-                "library.db").build()
+                "library.db").allowMainThreadQueries().build()
         }
     }
 }

@@ -21,8 +21,8 @@ interface Dao {
     @Query("SELECT * FROM book where name LIKE '%' || :name || '%';")
     fun findBook(name: String): Flow<List<Book>>
 
-    @Query("SELECT * FROM book ORDER BY id DESC")
-    suspend fun getAllBook(): List<Book>
+    @Query("SELECT * FROM book WHERE name LIKE :query")
+    fun search(query: String): List<Book>
 
     @Update
     suspend fun updateBook(book: Book)
