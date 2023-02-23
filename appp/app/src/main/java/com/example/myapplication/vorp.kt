@@ -24,7 +24,7 @@ class vorp : AppCompatActivity() {
         searchView = findViewById(R.id.searchView)
         recyclerView = findViewById(R.id.rcView)
 
-        adapter = BookAdapter(emptyList())
+        adapter = BookAdapter(this,emptyList())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 

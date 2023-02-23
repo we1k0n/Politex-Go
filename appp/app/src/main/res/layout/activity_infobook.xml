@@ -8,12 +8,12 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/infoNameBook"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="76dp"
-        android:text="TextView"
+        android:text="nameBook"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,58 +61,58 @@
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/infoAuthorBook"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:text="authorBook"
+        app:layout_constraintEnd_toEndOf="@+id/infoNameBook"
+        app:layout_constraintStart_toStartOf="@+id/infoNameBook"
+        app:layout_constraintTop_toBottomOf="@+id/infoNameBook" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/infoYearBook"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView14"
+        android:text="yearBook"
+        app:layout_constraintEnd_toEndOf="@+id/infoAuthorBook"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintStart_toStartOf="@+id/infoAuthorBook"
+        app:layout_constraintTop_toBottomOf="@+id/infoAuthorBook" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/infoRowBook"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        android:text="ryad"
+        app:layout_constraintEnd_toEndOf="@+id/infoYearBook"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="@+id/infoYearBook"
+        app:layout_constraintTop_toBottomOf="@+id/infoYearBook" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/infoRackBook"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
+        android:text="stelash"
+        app:layout_constraintEnd_toEndOf="@+id/infoRowBook"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintStart_toStartOf="@+id/infoRowBook"
+        app:layout_constraintTop_toBottomOf="@+id/infoRowBook" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/infoShelfBook"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        android:text="polisa"
+        app:layout_constraintEnd_toEndOf="@+id/infoRackBook"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintStart_toStartOf="@+id/infoRackBook"
+        app:layout_constraintTop_toBottomOf="@+id/infoRackBook" />
 
     <Button
         android:id="@+id/button2"
@@ -164,6 +164,7 @@
         android:id="@+id/infoofreader2"
         android:layout_width="166dp"
         android:layout_height="34dp"
+        android:layout_marginTop="32dp"
         android:text="Наявність:"
         android:textColor="#803CFA"
         android:textSize="24sp"
@@ -171,7 +172,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="304dp" />
+        app:layout_constraintTop_toBottomOf="@+id/infoShelfBook" />
 
     <TextView
         android:id="@+id/textView31"

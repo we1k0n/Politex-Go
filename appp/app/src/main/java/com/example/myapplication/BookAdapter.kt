@@ -1,12 +1,16 @@
 package com.example.myapplication
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.coroutines.coroutineContext
 
-class BookAdapter(var books: List<Book>) : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
+class BookAdapter(private val context: Context, var books: List<Book>) : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
+
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.tvName)
@@ -24,10 +28,23 @@ class BookAdapter(var books: List<Book>) : RecyclerView.Adapter<BookAdapter.View
         holder.nameTextView.text = book.name
         holder.authorTextView.text = book.author
         holder.yearTextView.text = book.year
+
+        holder.itemView.setOnClickListener{
+            onBookClick(book, position)
+        }
     }
 
     override fun getItemCount(): Int {
         return books.size
+    }
+    fun onBookClick(book: Book, position: Int){
+        val intent = Intent(context, Infobook::class.java).apply{
+            putExtra(EXTRA_NAME, book.name)
+        }
+        context.startActivity(intent)
+    }
+    companion object{
+        const val EXTRA_NAME = "extra_name"
     }
 }
 
