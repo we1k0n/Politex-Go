@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="405dp"
         android:layout_height="73dp"
+        app:cardBackgroundColor="#7C58BC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-2dp">
@@ -21,7 +22,10 @@
                 android:id="@+id/tvName"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
+                android:gravity="center"
                 android:text="TextView"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +34,9 @@
                 android:id="@+id/tvYear"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:gravity="center"
                 android:text="TextView"
+                android:textColor="#131010"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvAuthor"
@@ -40,7 +46,9 @@
                 android:id="@+id/tvAuthor"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:gravity="center"
                 android:text="TextView"
+                android:textColor="#131010"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tvYear"
                 app:layout_constraintStart_toStartOf="parent"

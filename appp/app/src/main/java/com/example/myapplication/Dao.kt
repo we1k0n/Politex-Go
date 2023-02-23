@@ -21,7 +21,7 @@ interface Dao {
     @Query("SELECT * FROM book where name LIKE '%' || :name || '%';")
     fun findBook(name: String): Flow<List<Book>>
 
-    @Query("SELECT * FROM book WHERE name LIKE :query")
+    @Query("SELECT * FROM book WHERE name LIKE :query OR author LIKE :query OR year LIKE :query")
     fun search(query: String): List<Book>
 
     @Update

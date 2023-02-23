@@ -8,31 +8,24 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView"
-        android:layout_width="410dp"
-        android:layout_height="471dp"
+        android:layout_width="411dp"
+        android:layout_height="674dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintVertical_bias="1.0"
         tools:itemCount="5"
-        tools:layout_editor_absoluteY="61dp"
         tools:listitem="@layout/book_item">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="398dp"
-        android:layout_height="42dp"
-        android:onClick="onClick"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

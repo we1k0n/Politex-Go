@@ -29,7 +29,7 @@ class AuthorizationActivity : AppCompatActivity() {
                 intent.putExtra("librarianId",it)
                 startActivity(intent)
                 finish()
-            }
+            }else
             Toast.makeText(this,"Пароль або логін неправильний", Toast.LENGTH_SHORT).show()
         }
     }

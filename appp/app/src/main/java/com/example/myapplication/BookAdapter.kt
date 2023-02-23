@@ -10,6 +10,8 @@ class BookAdapter(var books: List<Book>) : RecyclerView.Adapter<BookAdapter.View
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.tvName)
+        val authorTextView: TextView = itemView.findViewById(R.id.tvAuthor)
+        val yearTextView: TextView = itemView.findViewById(R.id.tvYear)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,6 +22,8 @@ class BookAdapter(var books: List<Book>) : RecyclerView.Adapter<BookAdapter.View
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = books[position]
         holder.nameTextView.text = book.name
+        holder.authorTextView.text = book.author
+        holder.yearTextView.text = book.year
     }
 
     override fun getItemCount(): Int {
