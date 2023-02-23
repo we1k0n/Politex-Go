@@ -34,4 +34,10 @@ class Menu : AppCompatActivity() {
         intent.putExtra("librarianId",librarianId)
         //finish()
     }
+    fun history(view: View){
+        val intent = Intent(this,historyofbook::class.java)
+        startActivity(intent)
+        intent.putExtra("librarianId",librarianId)
+        //finish()
+    }
 }
