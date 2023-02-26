@@ -24,20 +24,22 @@ class Menu : AppCompatActivity() {
     }
     fun AddReaders(view: View){
         val intent = Intent(this,Addreaders::class.java)
-        startActivity(intent)
         intent.putExtra("librarianId",librarianId)
+        startActivity(intent)
+
 //        finish()
     }
     fun vorp(view: View){
         val intent = Intent(this,vorp::class.java)
-        startActivity(intent)
         intent.putExtra("librarianId",librarianId)
-        //finish()
+        startActivity(intent)
+    //finish()
     }
     fun history(view: View){
         val intent = Intent(this,historyofbook::class.java)
-        startActivity(intent)
         intent.putExtra("librarianId",librarianId)
+        startActivity(intent)
+
         //finish()
     }
 }

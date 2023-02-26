@@ -39,22 +39,26 @@ class BookAdapter(private val context: Context, var books: List<Book>) : Recycle
     }
     fun onBookClick(book: Book, position: Int){
         val intent = Intent(context, Infobook::class.java).apply{
+            putExtra(EXTRA_ID,book.id)
             putExtra(EXTRA_NAME, book.name)
             putExtra(EXTRA_AUTHOR, book.author)
             putExtra(EXTRA_YEAR, book.year)
             putExtra(EXTRA_ROW, book.row)
             putExtra(EXTRA_RACK, book.racks)
             putExtra(EXTRA_SHELF, book.shelf)
+            putExtra(EXTRA_LIBRARIAN_ID, book.librarianId)
         }
         context.startActivity(intent)
     }
     companion object{
         const val EXTRA_NAME = "extra_name"
+        const val EXTRA_ID = "extra_id"
         const val EXTRA_AUTHOR = "extra_author"
         const val EXTRA_YEAR = "extra_year"
         const val EXTRA_ROW = "extra_row"
         const val EXTRA_RACK = "extra_rack"
         const val EXTRA_SHELF = "extra_shelf"
+        const val EXTRA_LIBRARIAN_ID = "extra_librarianId"
     }
 }
 
