@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
 import kotlinx.coroutines.flow.Flow
@@ -35,4 +36,7 @@ interface Dao {
 
     @Delete
     suspend fun deleteBook(book: Book)
+
+    @Query("SELECT * FROM readers WHERE firstName LIKE :query OR lastName LIKE :query")
+    fun searchReaders(query: String): List<Reader>
 }

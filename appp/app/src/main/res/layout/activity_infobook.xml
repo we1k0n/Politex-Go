@@ -107,9 +107,10 @@
         android:id="@+id/textView26"
         android:layout_width="165dp"
         android:layout_height="26dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -299,6 +300,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <SearchView
+        android:id="@+id/sReaders"
         android:layout_width="160dp"
         android:layout_height="25dp"
         android:layout_marginEnd="40dp"
@@ -306,5 +308,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoofreader"
         app:layout_constraintVertical_bias="0.673" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcReaders"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

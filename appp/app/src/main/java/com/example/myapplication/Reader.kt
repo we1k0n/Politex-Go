@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity (tableName = "readers")
 data class Reader(
     @PrimaryKey(autoGenerate = true)
     var id: Int? =null,
