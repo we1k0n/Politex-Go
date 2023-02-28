@@ -6,17 +6,20 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="405dp"
-        android:layout_height="73dp"
-        app:cardBackgroundColor="#7C58BC"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#6200ED"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
 
             <TextView
                 android:id="@+id/tvName"
@@ -24,8 +27,9 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:text="TextView"
-                android:textColor="#000000"
-                android:textStyle="bold"
+                android:textColor="#6200ED"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +40,9 @@
                 android:layout_height="0dp"
                 android:gravity="center"
                 android:text="TextView"
-                android:textColor="#131010"
+                android:textColor="#6200ED"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvAuthor"
@@ -48,12 +54,14 @@
                 android:layout_height="0dp"
                 android:gravity="center"
                 android:text="TextView"
-                android:textColor="#131010"
+                android:textColor="#6200ED"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tvYear"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

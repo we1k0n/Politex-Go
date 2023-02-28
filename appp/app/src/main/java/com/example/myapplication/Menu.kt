@@ -42,4 +42,11 @@ class Menu : AppCompatActivity() {
 
         //finish()
     }
+    fun returnbook(view: View){
+        val intent = Intent(this,Return::class.java)
+        intent.putExtra("librarianId",librarianId)
+        startActivity(intent)
+
+        //finish()
+    }
 }
