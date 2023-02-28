@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 
 import android.os.Bundle
@@ -20,11 +22,18 @@ class AuthorizationActivity : AppCompatActivity() {
         db = DB.getDB(this)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun onClick(view: View) {
         val login = bindingClass.etLogin.text.toString()
         val password = bindingClass.etPassword.text.toString()
         db.getDao().Authorization(login,password).asLiveData().observe(this) {
             if (it !=null) {
+                getSharedPreferences(getString(R.string.app_shared_prefs), Context.MODE_PRIVATE)?.let { sharedPreferences ->
+                        with (sharedPreferences.edit()) {
+                            putInt(getString(R.string.librarian_id), it)
+                            apply()
+                        }
+                    }
                 var intent = Intent(this, Menu::class.java)
                 intent.putExtra("librarianId",it)
                 startActivity(intent)
