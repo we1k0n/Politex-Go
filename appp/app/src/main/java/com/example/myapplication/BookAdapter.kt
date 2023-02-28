@@ -47,6 +47,7 @@ class BookAdapter(private val context: Context, var books: List<Book>) : Recycle
             putExtra(EXTRA_RACK, book.racks)
             putExtra(EXTRA_SHELF, book.shelf)
             putExtra(EXTRA_LIBRARIAN_ID, book.librarianId)
+            putExtra(EXTRA_READER_ID, book.readerId)
         }
         context.startActivity(intent)
     }
@@ -59,6 +60,7 @@ class BookAdapter(private val context: Context, var books: List<Book>) : Recycle
         const val EXTRA_RACK = "extra_rack"
         const val EXTRA_SHELF = "extra_shelf"
         const val EXTRA_LIBRARIAN_ID = "extra_librarianId"
+        const val EXTRA_READER_ID = "extra_readerId"
     }
 }
 

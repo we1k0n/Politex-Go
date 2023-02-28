@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Бібліотека</string>
-    <string name="password">password</string>
-    <string name="login">login</string>
+    <string name="app_shared_prefs">com.pp.sharedprefs.PREFERENCES_FILE_KEY</string>
+    <string name="librarian_id">0</string>
 </resources>
