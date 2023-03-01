@@ -13,14 +13,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ActivityInfobookBinding
 
 
-class Infobook : AppCompatActivity() {
+class Infobook : AppCompatActivity(), OnItemClickListener {
     lateinit var db: DB
     lateinit var existence: TextView
     lateinit var bindingClass : ActivityInfobookBinding
     var librarianId:Int=0
     private lateinit var searchView: SearchView
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: ReaderAdapter
+    private lateinit var adapter: ReaderBookAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_infobook)
@@ -29,7 +29,7 @@ class Infobook : AppCompatActivity() {
 
         searchView = findViewById(R.id.sReaders)
         recyclerView = findViewById(R.id.rcReaders)
-        adapter = ReaderAdapter(this,emptyList())
+        adapter = ReaderBookAdapter(this,emptyList(),this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -173,5 +173,17 @@ class Infobook : AppCompatActivity() {
         const val EXTRA_LAST_NAME = "extra_last_name"
         const val EXTRA_ADDRESS = "extra_address"
         const val EXTRA_PHONE_NUM = "extra_phone_num"
+    }
+
+    override fun OnItemClick(reader: Reader) {
+        val firstText = findViewById<TextView>(R.id.ReaderFirst)
+        val lastText = findViewById<TextView>(R.id.ReaderLast)
+        val addressText = findViewById<TextView>(R.id.ReaderAddress)
+        val phoneText = findViewById<TextView>(R.id.ReaderPhone)
+
+        firstText.text = reader.firstName
+        lastText.text = reader.lastName
+        addressText.text = reader.address
+        phoneText.text = reader.phoneNum.toString()
     }
 }

@@ -37,7 +37,7 @@ class ReaderAdapter(private val context: Context, var readers: List<Reader>) : R
     }
 
     fun onReaderClick(readers: Reader, position: Int){
-        val intent = Intent(context, Infobook::class.java).apply{
+        val intent = Intent(context, inforeader::class.java).apply{
             putExtra(EXTRA_FIRST_NAME,readers.firstName)
             putExtra(EXTRA_LAST_NAME, readers.lastName)
             putExtra(EXTRA_ADDRESS, readers.address)
