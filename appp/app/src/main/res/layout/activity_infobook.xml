@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/numberreader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="72dp"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="@+id/ReaderAddress" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/lastreader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="112dp"
@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="@+id/ReaderFirst" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/addressreader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="128dp"
@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="@+id/ReaderLast" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/firstreader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="148dp"
@@ -304,7 +304,7 @@
         android:layout_width="160dp"
         android:layout_height="25dp"
         android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/firstreader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoofreader"
         app:layout_constraintVertical_bias="0.673" />

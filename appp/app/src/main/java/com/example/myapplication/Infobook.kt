@@ -10,10 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.databinding.ActivityInfobookBinding
+
 
 class Infobook : AppCompatActivity() {
     lateinit var db: DB
     lateinit var existence: TextView
+    lateinit var bindingClass : ActivityInfobookBinding
     var librarianId:Int=0
     private lateinit var searchView: SearchView
     private lateinit var recyclerView: RecyclerView
@@ -22,6 +25,7 @@ class Infobook : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_infobook)
         db = DB.getDB(this)
+        bindingClass = ActivityInfobookBinding.inflate(layoutInflater)
 
         searchView = findViewById(R.id.sReaders)
         recyclerView = findViewById(R.id.rcReaders)
