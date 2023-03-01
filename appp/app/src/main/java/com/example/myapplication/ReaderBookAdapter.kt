@@ -20,6 +20,9 @@ class ReaderBookAdapter(private val context: Context, var readers: List<Reader>,
 
     override fun onBindViewHolder(holder: ReaderAdapter.ViewHolder, position: Int) {
         val reader = readers[position]
+        holder.firstName.text=reader.firstName
+        holder.lastName.text=reader.lastName
+        holder.phoneNum.text=reader.phoneNum.toString()
         holder.itemView.setOnClickListener{
             listener.OnItemClick(reader)
         }

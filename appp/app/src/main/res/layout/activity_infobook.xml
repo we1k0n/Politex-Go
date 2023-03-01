@@ -15,6 +15,7 @@
         android:text="Номер телефону:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/ReaderPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/ReaderAddress" />
@@ -27,6 +28,7 @@
         android:text="Прізвище:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/ReaderLast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,6 +42,7 @@
         android:text="Адреса:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/ReaderAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,6 +56,7 @@
         android:text="Ім'я:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/ReaderFirst"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"
@@ -100,6 +104,7 @@
         android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textColorLink="#CC4848"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,6 +114,7 @@
         android:layout_height="26dp"
         android:layout_marginTop="28dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/ReaderFirst"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/ReaderFirst"
@@ -120,6 +126,7 @@
         android:layout_height="26dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/ReaderLast"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ReaderLast"
@@ -131,6 +138,7 @@
         android:layout_height="26dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/ReaderAddress"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ReaderAddress"
@@ -315,7 +323,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ReaderLast"
-        app:layout_constraintTop_toBottomOf="@+id/ReaderPhone" />
+        app:layout_constraintStart_toStartOf="@+id/sReaders"
+        app:layout_constraintTop_toBottomOf="@+id/sReaders" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

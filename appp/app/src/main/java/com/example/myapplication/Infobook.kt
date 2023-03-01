@@ -41,6 +41,7 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                findViewById<RecyclerView>(R.id.rcReaders).visibility =View.VISIBLE
                 newText?.let { searchQuery ->
                     val reader = db.getDao().searchReaders("%$searchQuery%")
                     adapter.readers = reader
@@ -185,11 +186,19 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
         val lastText = findViewById<TextView>(R.id.ReaderLast)
         val addressText = findViewById<TextView>(R.id.ReaderAddress)
         val phoneText = findViewById<TextView>(R.id.ReaderPhone)
-
+        findViewById<RecyclerView>(R.id.rcReaders).visibility =View.GONE
+        findViewById<TextView>(R.id.firstreader).visibility=View.VISIBLE
+        findViewById<TextView>(R.id.lastreader).visibility=View.VISIBLE
+        findViewById<TextView>(R.id.addressreader).visibility=View.VISIBLE
+        findViewById<TextView>(R.id.numberreader).visibility=View.VISIBLE
         firstText.text = reader.firstName
         lastText.text = reader.lastName
         addressText.text = reader.address
         phoneText.text = reader.phoneNum.toString()
+        firstText.visibility=View.VISIBLE
+        lastText.visibility=View.VISIBLE
+        addressText.visibility=View.VISIBLE
+        phoneText.visibility=View.VISIBLE
         readerId= reader.id!!
     }
 }
