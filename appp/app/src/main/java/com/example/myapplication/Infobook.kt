@@ -25,7 +25,7 @@ class Infobook : AppCompatActivity() {
 
         searchView = findViewById(R.id.sReaders)
         recyclerView = findViewById(R.id.rcReaders)
-        adapter = ReaderAdapter(emptyList())
+        adapter = ReaderAdapter(this,emptyList())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -52,6 +52,24 @@ class Infobook : AppCompatActivity() {
         val row = intent.getStringExtra(EXTRA_ROW)
         val rack = intent.getStringExtra(EXTRA_RACK)
         val shelf = intent.getStringExtra(EXTRA_SHELF)
+
+        val firstName = intent.getStringExtra(EXTRA_FIRST_NAME)
+        val lastName = intent.getStringExtra(EXTRA_LAST_NAME)
+        val address = intent.getStringExtra(EXTRA_ADDRESS)
+        val phoneNum = intent.getIntExtra(EXTRA_PHONE_NUM, 0)
+
+        findViewById<TextView>(R.id.ReaderFirst).apply {
+            text = firstName
+        }
+        findViewById<TextView>(R.id.ReaderLast).apply {
+            text = lastName
+        }
+        findViewById<TextView>(R.id.ReaderAddress).apply {
+            text = address
+        }
+        findViewById<TextView>(R.id.ReaderPhone).apply {
+            text = phoneNum.toString()
+        }
 
         findViewById<TextView>(R.id.infoNameBook).apply {
             text = name
@@ -151,5 +169,9 @@ class Infobook : AppCompatActivity() {
         const val EXTRA_SHELF = "extra_shelf"
         const val EXTRA_LIBRARIAN_ID = "extra_librarianId"
         const val EXTRA_READER_ID = "extra_readerId"
+        const val EXTRA_FIRST_NAME = "extra_first_name"
+        const val EXTRA_LAST_NAME = "extra_last_name"
+        const val EXTRA_ADDRESS = "extra_address"
+        const val EXTRA_PHONE_NUM = "extra_phone_num"
     }
 }
