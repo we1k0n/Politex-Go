@@ -73,11 +73,7 @@ class Infobook : AppCompatActivity() {
         }
         existence = findViewById<TextView>(R.id.existence)
         if (intent.getIntExtra(EXTRA_READER_ID, 0) == 0) {
-
-//            existence.text = "Є"
-//            findViewById<Button>(R.id.button4).apply {
-//                visibility = View.GONE
-//            }
+            existence.text = "Є"
         } else {
             existence.text = "Нема"
             findViewById<Button>(R.id.button2).apply {
@@ -116,8 +112,8 @@ class Infobook : AppCompatActivity() {
 
             }
         }.execute(1, intent.getIntExtra(EXTRA_ID, 0))
-//        existence.text = "Нема"
-//        view.visibility = View.GONE
+        existence.text = "Нема"
+        view.visibility = View.GONE
 //        findViewById<Button>(R.id.button4).apply {
 //            visibility = View.VISIBLE
 //        }
