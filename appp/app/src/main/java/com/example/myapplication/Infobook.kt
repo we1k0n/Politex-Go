@@ -21,6 +21,7 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
     private lateinit var searchView: SearchView
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ReaderBookAdapter
+     var readerId:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_infobook)
@@ -109,33 +110,37 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
 
 
     fun onClickGiveBook(view: View) {
-        val history = History(
-            null,
-            intent.getIntExtra(EXTRA_ID, 0),
-            0,
-            librarianId
-        )
-        ATask(db = db, 4) { resalt ->
-            if (resalt) {
-            } else {
-                runOnUiThread {
-                    Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show()
-                }
+        if(readerId!=0){
+            val history = History(
+                null,
+                intent.getIntExtra(EXTRA_ID, 0),
+                readerId,
+                librarianId
+            )
+            ATask(db = db, 4) { resalt ->
+                if (resalt) {
+                } else {
+                    runOnUiThread {
+                        Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show()
+                    }
 
-            }
-        }.execute(history)
-        val array = intArrayOf(1, intent.getIntExtra(EXTRA_ID, 0))
-        ATask(db = db, 5) { resalt ->
-            if (resalt) {
-            } else {
-                runOnUiThread {
-                    Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show()
                 }
+            }.execute(history)
+            val array = intArrayOf(1, intent.getIntExtra(EXTRA_ID, 0))
+            ATask(db = db, 5) { resalt ->
+                if (resalt) {
+                } else {
+                    runOnUiThread {
+                        Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show()
+                    }
 
-            }
-        }.execute(1, intent.getIntExtra(EXTRA_ID, 0))
-        existence.text = "Нема"
-        view.visibility = View.GONE
+                }
+            }.execute(readerId, intent.getIntExtra(EXTRA_ID, 0))
+            existence.text = "Нема"
+            view.visibility = View.GONE
+        }
+        else Toast.makeText(this,"Виберіть читача",Toast.LENGTH_SHORT).show()
+
 //        findViewById<Button>(R.id.button4).apply {
 //            visibility = View.VISIBLE
 //        }
@@ -185,5 +190,6 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
         lastText.text = reader.lastName
         addressText.text = reader.address
         phoneText.text = reader.phoneNum.toString()
+        readerId= reader.id!!
     }
 }
