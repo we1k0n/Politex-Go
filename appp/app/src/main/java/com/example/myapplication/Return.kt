@@ -21,7 +21,7 @@ class Return : AppCompatActivity() {
 
         searchView = findViewById(R.id.SearchReturn)
         recyclerView = findViewById(R.id.rcReturn)
-        adapter = ReaderAdapter(emptyList())
+        adapter = ReaderAdapter(this,emptyList())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 

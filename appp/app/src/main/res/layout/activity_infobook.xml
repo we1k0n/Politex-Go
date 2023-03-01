@@ -15,9 +15,9 @@
         android:text="Номер телефону:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView28"
+        app:layout_constraintBottom_toTopOf="@+id/ReaderPhone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView27" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderAddress" />
 
     <TextView
         android:id="@+id/textView8"
@@ -27,10 +27,10 @@
         android:text="Прізвище:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintBottom_toTopOf="@+id/ReaderLast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView19" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderFirst" />
 
     <TextView
         android:id="@+id/textView9"
@@ -40,10 +40,10 @@
         android:text="Адреса:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintBottom_toTopOf="@+id/ReaderAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView26" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderLast" />
 
     <TextView
         android:id="@+id/textView7"
@@ -53,7 +53,7 @@
         android:text="Ім'я:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintBottom_toTopOf="@+id/ReaderFirst"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="@+id/infoofreader" />
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/ReaderFirst"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="140dp"
@@ -104,37 +104,37 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/ReaderLast"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="28dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="@+id/ReaderFirst"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderFirst"
+        app:layout_constraintTop_toBottomOf="@+id/ReaderFirst" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/ReaderAddress"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="@+id/ReaderLast"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderLast"
+        app:layout_constraintTop_toBottomOf="@+id/ReaderLast" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/ReaderPhone"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView27"
+        app:layout_constraintEnd_toEndOf="@+id/ReaderAddress"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView27"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderAddress"
+        app:layout_constraintTop_toBottomOf="@+id/ReaderAddress" />
 
     <TextView
         android:id="@+id/infoAuthorBook"
@@ -315,7 +315,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintStart_toStartOf="@+id/ReaderLast"
+        app:layout_constraintTop_toBottomOf="@+id/ReaderPhone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
