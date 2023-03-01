@@ -1,13 +1,12 @@
 package com.example.myapplication
 
-import android.content.Context
-import android.content.Intent
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.coroutines.coroutineContext
+
 
 class ReaderAdapter(var readers: List<Reader>) : RecyclerView.Adapter<ReaderAdapter.ViewHolder>() {
 

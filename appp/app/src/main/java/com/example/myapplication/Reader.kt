@@ -2,9 +2,10 @@ package com.example.myapplication
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity (tableName = "readers")
+@Entity (tableName = "readers",indices = [Index(value = ["phoneNum"], unique = true)])
 data class Reader(
     @PrimaryKey(autoGenerate = true)
     var id: Int? =null,
