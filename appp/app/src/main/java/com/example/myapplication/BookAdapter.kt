@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.coroutines.coroutineContext
@@ -16,6 +17,7 @@ class BookAdapter(private val context: Context, var books: List<Book>) : Recycle
         val nameTextView: TextView = itemView.findViewById(R.id.tvName)
         val authorTextView: TextView = itemView.findViewById(R.id.tvAuthor)
         val yearTextView: TextView = itemView.findViewById(R.id.tvYear)
+        val existanceTextView: TextView = itemView.findViewById(R.id.tvExistence)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,6 +30,11 @@ class BookAdapter(private val context: Context, var books: List<Book>) : Recycle
         holder.nameTextView.text = book.name
         holder.authorTextView.text = book.author
         holder.yearTextView.text = book.year
+        if (book.readerId == 0) {
+            holder.existanceTextView.text = "Є"
+        } else {
+            holder.existanceTextView.text = "Нема"
+        }
 
         holder.itemView.setOnClickListener{
             onBookClick(book, position)
