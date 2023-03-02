@@ -38,6 +38,7 @@ class ReaderAdapter(private val context: Context, var readers: List<Reader>) : R
 
     fun onReaderClick(readers: Reader, position: Int){
         val intent = Intent(context, inforeader::class.java).apply{
+            putExtra(EXTRA_ID, readers.id)
             putExtra(EXTRA_FIRST_NAME,readers.firstName)
             putExtra(EXTRA_LAST_NAME, readers.lastName)
             putExtra(EXTRA_ADDRESS, readers.address)
@@ -47,6 +48,7 @@ class ReaderAdapter(private val context: Context, var readers: List<Reader>) : R
         context.startActivity(intent)
     }
     companion object{
+        const val EXTRA_ID = "extra_id"
         const val EXTRA_FIRST_NAME = "extra_first_name"
         const val EXTRA_LAST_NAME = "extra_last_name"
         const val EXTRA_ADDRESS = "extra_address"

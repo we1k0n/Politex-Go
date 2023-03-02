@@ -1,5 +1,6 @@
 package com.example.myapplication
 
 interface OnItemClickListener {
-    fun OnItemClick(reader: Reader)
+    fun OnItemClickReader(reader: Reader)
+    fun OnItemClickBook(book: Book)
 }

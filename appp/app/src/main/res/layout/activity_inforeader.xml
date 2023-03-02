@@ -7,7 +7,7 @@
     tools:context=".inforeader">
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/RAddress"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:text="TextView"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infoofreader3" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/RLast"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:text="TextView"
@@ -47,10 +47,10 @@
         android:text="Адреса:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="@+id/RLast"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="@+id/RLast"
+        app:layout_constraintTop_toBottomOf="@+id/RLast" />
 
     <TextView
         android:id="@+id/numberreader2"
@@ -60,13 +60,13 @@
         android:text="Номер телефону:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="@+id/RAddress"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintStart_toStartOf="@+id/RAddress"
+        app:layout_constraintTop_toBottomOf="@+id/RAddress" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/RPhone"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:text="TextView"
@@ -96,17 +96,28 @@
         android:text="Прізвище:"
         android:textColor="#6200ED"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="@+id/RFirst"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintStart_toStartOf="@+id/RFirst"
+        app:layout_constraintTop_toBottomOf="@+id/RFirst" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/RFirst"
         android:layout_width="165dp"
         android:layout_height="26dp"
         android:text="TextView"
         android:textColorLink="#CC4848"
         app:layout_constraintStart_toStartOf="@+id/namereader2"
         app:layout_constraintTop_toBottomOf="@+id/namereader2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RcReaderBook"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/RPhone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/book_item"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

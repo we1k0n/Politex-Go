@@ -59,24 +59,6 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
         val rack = intent.getStringExtra(EXTRA_RACK)
         val shelf = intent.getStringExtra(EXTRA_SHELF)
 
-        val firstName = intent.getStringExtra(EXTRA_FIRST_NAME)
-        val lastName = intent.getStringExtra(EXTRA_LAST_NAME)
-        val address = intent.getStringExtra(EXTRA_ADDRESS)
-        val phoneNum = intent.getIntExtra(EXTRA_PHONE_NUM, 0)
-
-        findViewById<TextView>(R.id.ReaderFirst).apply {
-            text = firstName
-        }
-        findViewById<TextView>(R.id.ReaderLast).apply {
-            text = lastName
-        }
-        findViewById<TextView>(R.id.ReaderAddress).apply {
-            text = address
-        }
-        findViewById<TextView>(R.id.ReaderPhone).apply {
-            text = phoneNum.toString()
-        }
-
         findViewById<TextView>(R.id.infoNameBook).apply {
             text = name
         }
@@ -181,7 +163,7 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
         const val EXTRA_PHONE_NUM = "extra_phone_num"
     }
 
-    override fun OnItemClick(reader: Reader) {
+    override fun OnItemClickReader(reader: Reader) {
         val firstText = findViewById<TextView>(R.id.ReaderFirst)
         val lastText = findViewById<TextView>(R.id.ReaderLast)
         val addressText = findViewById<TextView>(R.id.ReaderAddress)
@@ -200,5 +182,9 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
         addressText.visibility=View.VISIBLE
         phoneText.visibility=View.VISIBLE
         readerId= reader.id!!
+    }
+
+    override fun OnItemClickBook(book: Book) {
+
     }
 }

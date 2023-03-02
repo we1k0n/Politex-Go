@@ -24,9 +24,10 @@ class ReaderBookAdapter(private val context: Context, var readers: List<Reader>,
         holder.lastName.text=reader.lastName
         holder.phoneNum.text=reader.phoneNum.toString()
         holder.itemView.setOnClickListener{
-            listener.OnItemClick(reader)
+            listener.OnItemClickReader(reader)
         }
     }
+
 }
 
 

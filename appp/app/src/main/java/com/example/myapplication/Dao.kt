@@ -31,12 +31,9 @@ interface Dao {
     @Query("SELECT * FROM book WHERE name LIKE :query OR author LIKE :query OR year LIKE :query")
     fun search(query: String): List<Book>
 
-    @Update
-    suspend fun updateBook(book: Book)
-
-    @Delete
-    suspend fun deleteBook(book: Book)
-
     @Query("SELECT * FROM readers WHERE firstName LIKE :query OR lastName LIKE :query")
     fun searchReaders(query: String): List<Reader>
+
+    @Query("SELECT * FROM book WHERE readerId =:readerId")
+    fun readerBook(readerId: Int): List<Book>
 }
