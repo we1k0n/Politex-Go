@@ -30,11 +30,14 @@ class historyofbook : AppCompatActivity() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText?.let { searchQuery ->
                     var his: List<History>
-                    var book = db.getDao().searchBookId("%$searchQuery%")
-                    if (book != 0)
-                    his = db.getDao().searchID(book)
-                    else  his = db.getDao().getHistory()
-                    book = 0
+                    var book = 0
+                    if(searchQuery!=""){
+                        book = db.getDao().searchBookId("%$searchQuery%")
+                        if (book != 0)
+                            his = db.getDao().searchID(book)
+                        else  his = db.getDao().getHistory()
+                    }
+                    else his = db.getDao().getHistory()
                     adapter.historys = his
                     adapter.notifyDataSetChanged()
                 }
