@@ -16,7 +16,7 @@ class historyofbook : AppCompatActivity() {
         db = DB.getDB(this)
 
         recyclerView = findViewById(R.id.rcHistory)
-        adapter = HistoryAdapter(this, emptyList(),db)
+        adapter = HistoryAdapter(this,db.getDao().getHistory(),db,this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }

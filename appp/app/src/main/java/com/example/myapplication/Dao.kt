@@ -37,12 +37,12 @@ interface Dao {
     @Query("SELECT * FROM book WHERE readerId =:readerId")
     fun readerBook(readerId: Int): List<Book>
 
-    @Query("SELECT * FROM book WHERE id =: bookId")
+    @Query("SELECT * FROM book WHERE id =:bookId")
     fun historyBook(bookId: Int): Flow<List<Book>>
-    @Query("SELECT * FROM readers WHERE id =: readerId")
-    fun historyReader(readerId: Int): List<Reader>
-    @Query("SELECT * FROM librarians WHERE id =: librarianId")
-    fun historyLibrian(librarianId: Int): List<Librarian>
+    @Query("SELECT * FROM readers WHERE id =:readerId")
+    fun historyReader(readerId: Int): Flow<List<Reader>>
+    @Query("SELECT * FROM librarians WHERE id =:librarianId")
+    fun historyLibrian(librarianId: Int): Flow<List<Librarian>>
 
     @Query("SELECT * FROM history")
     fun getHistory(): List<History>
