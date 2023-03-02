@@ -160,6 +160,7 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
         const val EXTRA_LAST_NAME = "extra_last_name"
         const val EXTRA_ADDRESS = "extra_address"
         const val EXTRA_PHONE_NUM = "extra_phone_num"
+        const val EXTRA_BOOK_ID = "extra_book_id"
     }
 
     override fun OnItemClickReader(reader: Reader) {

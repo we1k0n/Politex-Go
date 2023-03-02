@@ -12,6 +12,7 @@ class ATask(val db: DB, val type: Int, val callback: (Boolean) -> Unit) :
                 3 -> db.getDao().insertReader(p[0] as Reader)
                 4 -> db.getDao().insertHistory(p[0] as History)
                 5 -> db.getDao().giveBook(p[0] as Int,p[1] as Int)
+                6 -> db.getDao().historyBook(p[0] as Int)
             }
 
             return true
