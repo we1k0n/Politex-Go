@@ -31,6 +31,11 @@ interface Dao {
     @Query("SELECT * FROM book WHERE name LIKE :query OR author LIKE :query OR year LIKE :query")
     fun search(query: String): List<Book>
 
+    @Query("SELECT id FROM book WHERE name LIKE :query OR author LIKE :query")
+    fun searchBookId(query: String): Int
+    @Query("SELECT * FROM history WHERE bookId =:zmina")
+    fun searchID(zmina: Int): List<History>
+
     @Query("SELECT * FROM readers WHERE firstName LIKE :query OR lastName LIKE :query")
     fun searchReaders(query: String): List<Reader>
 
