@@ -130,7 +130,6 @@ class Infobook : AppCompatActivity(), OnItemClickListener {
     }
 
     fun onClickReturnBook(view: View) {
-        val array = intArrayOf(1, intent.getIntExtra(EXTRA_ID, 0))
         ATask(db = db, 5) { resalt ->
             if (resalt) {
             } else {
