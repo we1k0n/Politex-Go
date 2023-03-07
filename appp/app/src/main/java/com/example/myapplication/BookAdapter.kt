@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -57,6 +58,7 @@ class BookAdapter(private val context: Context, var books: List<Book>) : Recycle
             putExtra(EXTRA_READER_ID, book.readerId)
         }
         context.startActivity(intent)
+        (context as Activity).finish()
     }
     companion object{
         const val EXTRA_NAME = "extra_name"
